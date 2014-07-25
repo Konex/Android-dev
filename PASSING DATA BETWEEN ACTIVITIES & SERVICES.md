@@ -50,6 +50,49 @@ So you can use it anyway in your app like this:
 	Singleton singleton = Singleton.getInstance();
 	singleton.customSingletonMethod();
 
+**global variable**
+
+	/**
+	 * This class is to hold anything that to be shared across all activities.
+	 * For instance: this class can be also used to store 
+	 * auth token retrieved from a web server.
+	 */    
+	public class YiniGlobal extends Application {
+		private int id = -1;
+		private String loggedInUserName = null;
+		private String encryptedPassword = null;
+		
+		public String getLoggedInUserName() {
+			return loggedInUserName;
+		}
+
+		public void setLoggedInUserName(String loggedInUserName) {
+			this.loggedInUserName = loggedInUserName;
+		}
+
+		public int getId() {
+			return id;
+		}
+
+		public void setId(int id) {
+			this.id = id;
+		}
+
+		public String getEncryptedPassword() {
+			return encryptedPassword;
+		}
+
+		public void setEncryptedPassword(String encryptedPassword) {
+			this.encryptedPassword = encryptedPassword;
+		}
+		
+		public void reset() {
+			this.id = -1;
+			this.loggedInUserName = null;
+			this.encryptedPassword = null;
+		}
+	}
+	
 **A public static field/method**
 An alternate way to make data accessible across Activities/Services is to use public static fields and/or methods. You can access these static fields from any other class in your application. To share an object, the activity which creates your object sets a static field to point to this object and any other activity that wants to use this object just accesses this static field.
 

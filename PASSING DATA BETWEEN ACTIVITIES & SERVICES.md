@@ -58,7 +58,7 @@ You can also use a HashMap of WeakReferences to Objects with Long keys. When an 
 
 ##Passing and sharing data
 
-**global variable**
+**Global variable**
 
 	/**
 	 * This class is to hold anything that to be shared across all activities.

@@ -1,9 +1,9 @@
 Passing Data Between Activities and Services
 ===========
-**Primitive Data Types**
+##Primitive Data Types
 To share primitive data between Activities/Services in an application, use Intent.putExtras(). For passing primitive data that needs to persist use the Preferences storage mechanism.
 
-**Non-Persistent Objects**
+##Non-Persistent Objects
 For sharing complex non-persistent user-defined objects for short duration, the following approaches are recommended:
 
 **Singleton class**
@@ -50,6 +50,14 @@ So you can use it anyway in your app like this:
 	Singleton singleton = Singleton.getInstance();
 	singleton.customSingletonMethod();
 
+**A public static field/method**
+An alternate way to make data accessible across Activities/Services is to use public static fields and/or methods. You can access these static fields from any other class in your application. To share an object, the activity which creates your object sets a static field to point to this object and any other activity that wants to use this object just accesses this static field.
+
+**A HashMap of WeakReferences to Objects**
+You can also use a HashMap of WeakReferences to Objects with Long keys. When an activity wants to pass an object to another activity, it simply puts the object in the map and sends the key (which is a unique Long based on a counter or time stamp) to the recipient activity via intent extras. The recipient activity retrieves the object using this key.	
+
+##Passing and sharing data
+
 **global variable**
 
 	/**
@@ -92,12 +100,6 @@ So you can use it anyway in your app like this:
 			this.encryptedPassword = null;
 		}
 	}
-	
-**A public static field/method**
-An alternate way to make data accessible across Activities/Services is to use public static fields and/or methods. You can access these static fields from any other class in your application. To share an object, the activity which creates your object sets a static field to point to this object and any other activity that wants to use this object just accesses this static field.
-
-**A HashMap of WeakReferences to Objects**
-You can also use a HashMap of WeakReferences to Objects with Long keys. When an activity wants to pass an object to another activity, it simply puts the object in the map and sends the key (which is a unique Long based on a counter or time stamp) to the recipient activity via intent extras. The recipient activity retrieves the object using this key.
 	
 **Bundle**	
 	

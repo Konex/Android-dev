@@ -88,7 +88,8 @@ You can also use a HashMap of WeakReferences to Objects with Long keys. When an 
 		public PersonParcelable() {}
  
 		// We need to add a Creator
-		public static final Parcelable.Creator<PersonParcelable> CREATOR = new 					Parcelable.Creator<PersonParcelable>() {
+		public static final Parcelable.Creator<PersonParcelable> CREATOR = 
+			new Parcelable.Creator<PersonParcelable>() {
 	 
 			@Override
 			public PersonParcelable createFromParcel(Parcel parcel) {  

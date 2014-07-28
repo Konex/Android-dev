@@ -23,6 +23,7 @@ In the **DbHelper.java**, we use a HashMap to hold all the DAOs.
 	}
 
 Then you can get access to a DAO by:
+
 	RuntimeExceptionDao<yini, Integer> yiniDao = 
 	(RuntimeExceptionDao<yini, Integer>)mDbHelper.getRuntimeDao(yini.class);
 				QueryBuilder<yini, Integer> qb = yiniDao.queryBuilder();

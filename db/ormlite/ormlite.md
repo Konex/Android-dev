@@ -4,7 +4,7 @@ ormlite usage example
 Follow the instructions [here](http://ormlite.com/javadoc/ormlite-core/doc-files/ormlite_4.html#Use-With-Android)
 
 Note:
-Whenever you modify your db class, don't forget to run the OrmLiteConfigUtil as well!
+Whenever you modify your db classes, don't forget to run the OrmLiteConfigUtil as well!
 The ormlite_config.txt will be auto-generated under yourApp/res/raw/
 
 In the **DbHelper.java**, we use a HashMap to hold all the DAOs. 

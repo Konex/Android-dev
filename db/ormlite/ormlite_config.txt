@@ -1,0 +1,14 @@
+#
+# generated on 2014/06/10 03:18:10
+#
+# --table-start--
+dataClass=com.yini.models.registration.DriverLicence
+tableName=driver_license
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################

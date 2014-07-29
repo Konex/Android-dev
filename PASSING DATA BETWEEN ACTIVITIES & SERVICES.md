@@ -66,7 +66,7 @@ You can also use a HashMap of WeakReferences to Objects with Long keys. When an 
 	 * auth token retrieved from a web server.
 	 */    
 	public class YiniGlobal extends Application {
-		private int id = -1;
+		private int userId = -1;
 		private String loggedInUserName = null;
 		private String encryptedPassword = null;
 		
@@ -78,12 +78,12 @@ You can also use a HashMap of WeakReferences to Objects with Long keys. When an 
 			this.loggedInUserName = loggedInUserName;
 		}
 
-		public int getId() {
-			return id;
+		public int getUserId() {
+			return userId;
 		}
 
-		public void setId(int id) {
-			this.id = id;
+		public void setUserId(int userId) {
+			this.userId = userId;
 		}
 
 		public String getEncryptedPassword() {
@@ -95,7 +95,7 @@ You can also use a HashMap of WeakReferences to Objects with Long keys. When an 
 		}
 		
 		public void reset() {
-			this.id = -1;
+			this.userId = -1;
 			this.loggedInUserName = null;
 			this.encryptedPassword = null;
 		}

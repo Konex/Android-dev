@@ -62,8 +62,8 @@ public class DbHelper extends OrmLiteSqliteOpenHelper {
         if (maps == null) maps = new HashMap<String, Object>();
 		
 	if (!maps.containsKey(type.getSimpleName())) {
-		Object obj = getRuntimeExceptionDao(type);
-		maps.put(type.getSimpleName(), obj);
+	    Object obj = getRuntimeExceptionDao(type);
+	    maps.put(type.getSimpleName(), obj);
 	}
 		
 	return maps.get(type.getSimpleName());

@@ -49,8 +49,8 @@ public class DbHelper extends OrmLiteSqliteOpenHelper {
             TableUtils.createTable(connectionSource, Pod.class);
             
         } catch (Exception e) {
-			Log.e(DbHelper.class.getName(), "Can't create database", e);
-        	throw new RuntimeException(e);
+	    Log.e(DbHelper.class.getName(), "Can't create database", e);
+            throw new RuntimeException(e);
         }   
     }
     
@@ -63,7 +63,7 @@ public class DbHelper extends OrmLiteSqliteOpenHelper {
             // after we drop the old databases, we create the new ones
             onCreate(db, connectionSource);
         } catch (SQLException e) {
-        	Log.e(DbHelper.class.getName(), "Can't drop databases", e);
+            Log.e(DbHelper.class.getName(), "Can't drop databases", e);
             throw new RuntimeException(e);
         }
     }
@@ -74,15 +74,15 @@ public class DbHelper extends OrmLiteSqliteOpenHelper {
         maps = null;
     }
     
-	@SuppressWarnings("unchecked")
-	public Object getRuntimeDao(Class<?> type) {
-		if (maps == null) maps = new HashMap<String, Object>();
+    @SuppressWarnings("unchecked")
+    public Object getRuntimeDao(Class<?> type) {
+        if (maps == null) maps = new HashMap<String, Object>();
 		
-		if (!maps.containsKey(type.getSimpleName())) {
-			Object obj = getRuntimeExceptionDao(type);
-			maps.put(type.getSimpleName(), obj);
-		}
-		
-		return maps.get(type.getSimpleName());
+	if (!maps.containsKey(type.getSimpleName())) {
+		Object obj = getRuntimeExceptionDao(type);
+		maps.put(type.getSimpleName(), obj);
 	}
+		
+	return maps.get(type.getSimpleName());
+    }
 }

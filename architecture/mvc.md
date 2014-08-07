@@ -70,6 +70,7 @@ A More complicated/useful scenario
  
 
 References
+
 http://www.therealjoshua.com/2012/07/android-architecture-part-10-the-activity-revisited/
 http://www.therealjoshua.com/2012/03/event-dispatching-sending-messages/
 
